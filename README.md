@@ -1,83 +1,74 @@
-# 📊 Fintech Strategy Backtester Dashboard
+# FinDash 📉 – A Fintech Strategy Dashboard
 
-A clean, interactive web application to **backtest Moving Average Crossover strategies** with built-in **RSI, MACD, and Bollinger Bands** visualization — built using **Streamlit**, **Python**, and **yFinance**.
+Welcome to **FinDash** — a powerful yet lightweight strategy backtesting and visualization tool for stock market traders and fintech enthusiasts.
 
-![App Title](./screenshots/App%20title%20and%20inputs.png)
-
----
-
-## 🚀 Project Overview
-
-This tool helps visualize and test basic technical analysis strategies on real market data (via Yahoo Finance). It supports:
-
-- ✅ Customizable MA crossover strategy
-- 📈 RSI & MACD overlays
-- 📉 Bollinger Bands for volatility
-- 📊 Performance and risk metrics
-- 🧾 Auto-generated trade logs
-- 📥 CSV export of trades
+This dashboard lets you simulate a **Moving Average Crossover Strategy**, enhanced with:
+- 📊 Dynamic RSI & MACD overlays
+- 🔍 Trade logs
+- 📈 Cumulative performance comparisons
+- ⚙️ Adjustable parameters (stock symbol, date range, SMA periods)
 
 ---
 
-## 📌 Features
+## 🔧 Features Overview
 
-### 📥 Custom Stock + Timeframe Input
+### 📌 App Interface and Inputs
+![App title and inputs](./screenshots/App%20title%20and%20inputs.png)
 
-Users can specify:
-- Ticker symbol (e.g., AAPL, TSLA)
-- Start and end dates
-- Custom SMA lengths for short and long windows
+- Select a stock (via Yahoo Finance)
+- Choose the date range
+- Adjust short/long SMA periods interactively
 
-![Input Graph](./screenshots/Input%20graph.png)
+### 📈 Stock Price with SMA Crossover
+![Input graph](./screenshots/Input%20graph.png)
 
----
+- Closing price plot
+- Buy/sell signals
+- SMA overlays
 
-### 📈 Visual Strategy Summary
-
-The dashboard shows:
-- Close price with overlayed SMAs
-- Buy/Sell signals based on crossover logic
-- RSI zone markers (30/70)
-- MACD and Signal Line
-- Bollinger Bands (Upper, Middle, Lower)
-
-![Strategy Summary](./screenshots/Strategy%20summary%20and%20RSI.png)
-
----
-
-### 📊 Metrics & Comparison
-
-Key metrics to evaluate strategy performance:
-- Strategy vs. Buy-and-Hold Returns
-- Sharpe Ratio & Max Drawdown
-- Number of trades executed
-
+### 📊 Strategy Metrics Summary
 ![Metrics](./screenshots/Metrics.png)
 
----
+- Strategy vs. Buy & Hold return
+- Trade count
+- Sharpe Ratio & Max Drawdown
 
-### 📑 Trade Log + CSV Download
+### 📉 Strategy Summary with RSI
+![Strategy summary and RSI](./screenshots/Strategy%20summary%20and%20RSI.png)
 
-Complete record of all Buy/Sell actions, shown in a table and exportable as CSV.
+- RSI (14) with overbought/oversold zones
+- Helps fine-tune entry/exit points
 
+### 📑 Trade Log Table
 ![Trade Log](./screenshots/Trade%20Log.png)
 
----
+- Chronological buy/sell trades
+- Downloadable CSV for further analysis
 
-### 🔄 Cumulative Returns Comparison
+### 🔁 Cumulative Returns Comparison
+![Cumulative Returns Comparison](./screenshots/Cumulative%20Returns%20Comparison.png)
 
-Line plot comparing cumulative returns of the strategy vs. simple buy-and-hold.
-
-![Cumulative Returns](./screenshots/Cumulative%20Returns%20Comparison.png)
-
----
-
-## 🛠️ Tech Stack
-
-- **Python**
-- **Streamlit** (for frontend UI)
-- **Pandas, NumPy, Matplotlib**
-- **yFinance** (for stock data)
-- **TA-Lib / `ta`** (for RSI, MACD, BBands)
+- Strategy performance vs. holding the stock
+- Helps visualize long-term efficiency
 
 ---
+
+💡 What I Learned
+This project helped me dive deep into:
+
+Financial data manipulation using Pandas
+
+Strategy logic using moving averages
+
+Visual analysis via Matplotlib & Streamlit
+
+Indicator overlays using the ta technical analysis library
+
+Building real-world fintech dashboards from scratch
+
+🤝 Connect
+Made with ❤️ by Udit Pandey
+📬 Connect on LinkedIn
+🐛 Found an issue or have an idea? Raise it here
+
+
