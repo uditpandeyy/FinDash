@@ -58,6 +58,13 @@ ax.scatter(buy_signals.index, buy_signals["Close"], label="Buy", marker="^", col
 ax.scatter(sell_signals.index, sell_signals["Close"], label="Sell", marker="v", color="red")
 
 ax.set_title(f"{ticker} - MA Crossover Strategy")
+# Display strategy performance
+st.subheader("📊 Strategy Performance Summary")
+col1, col2, col3 = st.columns(3)
+col1.metric("Strategy Return", f"{cumulative_strategy_return.iloc[-1]*100:.2f}%")
+col2.metric("Buy & Hold Return", f"{cumulative_stock_return.iloc[-1]*100:.2f}%")
+col3.metric("Trades Executed", f"{int(num_trades)}")
+
 ax.legend()
 st.pyplot(fig)
 st.pyplot(fig)
