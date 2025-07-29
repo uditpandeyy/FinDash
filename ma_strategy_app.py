@@ -28,6 +28,22 @@ data["SMA50"] = data["Close"].rolling(window=50).mean()
 data["Signal"] = 0
 data.loc[data["SMA20"] > data["SMA50"], "Signal"] = 1
 data.loc[data["SMA20"] < data["SMA50"], "Signal"] = -1
+# Shift signals to simulate trade execution on next day
+data["Position"] = data["Signal"].shift(1)
+
+# Calculate daily returns
+data["Daily Return"] = data["Close"].pct_change()
+
+# Strategy return: position * daily return
+data["Strategy Return"] = data["Position"] * data["Daily Return"]
+
+# Cumulative returns
+cumulative_strategy_return = (1 + data["Strategy Return"].fillna(0)).cumprod() - 1
+cumulative_stock_return = (1 + data["Daily Return"].fillna(0)).cumprod() - 1
+
+# Count trades
+num_trades = (data["Position"].diff().abs() == 2).sum()
+
 
 # Plotting
 fig, ax = plt.subplots(figsize=(12, 6))
@@ -44,3 +60,11 @@ ax.scatter(sell_signals.index, sell_signals["Close"], label="Sell", marker="v", 
 ax.set_title(f"{ticker} - MA Crossover Strategy")
 ax.legend()
 st.pyplot(fig)
+st.pyplot(fig)
+
+st.subheader("Performance Metrics")
+
+col1, col2, col3 = st.columns(3)
+col1.metric("Total Strategy Return", f"{cumulative_strategy_return.iloc[-1]*100:.2f}%")
+col2.metric("Buy & Hold Return", f"{cumulative_stock_return.iloc[-1]*100:.2f}%")
+col3.metric("Total Trades", int(num_trades))
