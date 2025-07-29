@@ -79,13 +79,13 @@ To validate the logic of the Streamlit simulation, a parallel backtest was built
 ### 📸 QuantConnect Backtest Screenshots
 
 - 📉 Rolling Statistics  
-  ![Rolling Statistics](screenshots/Rolling_Statistics.png)
+  ![Rolling Statistics](screenshots/Rolling%20Statistics.png)
 
 - 📉 Drawdown & Capacity  
-  ![Drawdown and Capacity](screenshots/Drawdown_and_Capacity.png)
+  ![Drawdown and Capacity](screenshots/Drawdown%20and%20Capacity.png)
 
 - 📈 Strategy Equity Curve  
-  ![Strategy Equity](screenshots/Strategy_Equity.png)
+  ![Strategy Equity](screenshots/Strategy%20Equity.png)
 
 ---
 
