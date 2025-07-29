@@ -67,6 +67,28 @@ It enables users to:
 - Helps visualize long-term efficiency
 
 ---
+## 🧪 QuantConnect Backtesting Strategy
+
+To validate the logic of the Streamlit simulation, a parallel backtest was built using **QuantConnect's Lean engine**.
+
+### 💡 Strategy Logic
+- **Buy** when short-term MA crosses above long-term MA  
+- **Sell** when short-term MA crosses below long-term MA  
+- Evaluated on historical data using QuantConnect’s simulation engine
+
+### 📸 QuantConnect Backtest Screenshots
+
+- 📉 Rolling Statistics  
+  ![Rolling Statistics](screenshots/Rolling_Statistics.png)
+
+- 📉 Drawdown & Capacity  
+  ![Drawdown and Capacity](screenshots/Drawdown_and_Capacity.png)
+
+- 📈 Strategy Equity Curve  
+  ![Strategy Equity](screenshots/Strategy_Equity.png)
+
+---
+
 
 💡 What I Learned
 This project helped me dive deep into:
