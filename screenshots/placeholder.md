@@ -1,1 +1,1 @@
-screenshots/placeholder.md
+This folder contains screenshots of the project.
