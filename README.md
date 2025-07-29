@@ -68,7 +68,7 @@ Building real-world fintech dashboards from scratch
 
 🤝 Connect
 Made with ❤️ by Udit Pandey
-📬 Connect on LinkedIn
+[Connect on LinkedIn](https://www.linkedin.com/in/uditpandeyy)
 🐛 Found an issue or have an idea? Raise it here
 
 
