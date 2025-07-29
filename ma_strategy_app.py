@@ -75,3 +75,14 @@ col1, col2, col3 = st.columns(3)
 col1.metric("Total Strategy Return", f"{cumulative_strategy_return.iloc[-1]*100:.2f}%")
 col2.metric("Buy & Hold Return", f"{cumulative_stock_return.iloc[-1]*100:.2f}%")
 col3.metric("Total Trades", int(num_trades))
+# Create trade log DataFrame
+trades = data[data["Position"].diff().abs() == 2].copy()
+trades["Action"] = trades["Position"].apply(lambda x: "Buy" if x == 1 else "Sell")
+trade_log = trades[["Action", "Close"]]
+trade_log["Date"] = trades.index
+trade_log = trade_log[["Date", "Action", "Close"]].reset_index(drop=True)
+
+# Show trade log in Streamlit
+st.subheader("🧾 Trade Log")
+st.dataframe(trade_log, use_container_width=True)
+
