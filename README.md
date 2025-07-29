@@ -6,7 +6,6 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.47.1-FF4B4B?logo=streamlit&logoColor=white)
 ![yFinance](https://img.shields.io/badge/yFinance-live%20data-green)
 ![TA-Lib](https://img.shields.io/badge/Technical%20Indicators-TA%20Lib-blueviolet)
-![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
 ---
 
