@@ -1,5 +1,5 @@
 # filename: ma_strategy_app.py
-
+import ta
 import yfinance as yf
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -14,6 +14,10 @@ ticker = st.text_input("Enter Stock Symbol", value="AAPL")
 start_date = st.date_input("Start Date", value=pd.to_datetime("2022-01-01"))
 end_date = st.date_input("End Date", value=pd.to_datetime("2023-01-01"))
 
+# User-selected SMA periods
+sma_short = st.slider("Short-Term SMA Period", min_value=5, max_value=50, value=20)
+sma_long = st.slider("Long-Term SMA Period", min_value=10, max_value=200, value=50)
+
 # Fetch Data
 data = yf.download(ticker, start=start_date, end=end_date)
 if data.empty:
@@ -21,13 +25,17 @@ if data.empty:
     st.stop()
 
 # Calculate Moving Averages
-data["SMA20"] = data["Close"].rolling(window=20).mean()
-data["SMA50"] = data["Close"].rolling(window=50).mean()
+data["SMA_Short"] = data["Close"].rolling(window=sma_short).mean()
+data["SMA_Long"] = data["Close"].rolling(window=sma_long).mean()
+# Calculate RSI using 'ta' library
+rsi_indicator = ta.momentum.RSIIndicator(close=data["Close"].squeeze(), window=14)
+data["RSI"] = rsi_indicator.rsi()
 
 # Generate Buy/Sell Signals
 data["Signal"] = 0
-data.loc[data["SMA20"] > data["SMA50"], "Signal"] = 1
-data.loc[data["SMA20"] < data["SMA50"], "Signal"] = -1
+data.loc[data["SMA_Short"] > data["SMA_Long"], "Signal"] = 1
+data.loc[data["SMA_Short"] < data["SMA_Long"], "Signal"] = -1
+
 # Shift signals to simulate trade execution on next day
 data["Position"] = data["Signal"].shift(1)
 
@@ -48,8 +56,9 @@ num_trades = (data["Position"].diff().abs() == 2).sum()
 # Plotting
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.plot(data["Close"], label="Close Price", alpha=0.5)
-ax.plot(data["SMA20"], label="SMA 20", linestyle="--")
-ax.plot(data["SMA50"], label="SMA 50", linestyle="--")
+ax.plot(data["SMA_Short"], label=f"SMA{sma_short}", linestyle="--")
+ax.plot(data["SMA_Long"], label=f"SMA{sma_long}", linestyle="--")
+
 
 # Buy/Sell Markers
 buy_signals = data[data["Signal"] == 1]
@@ -64,10 +73,18 @@ col1, col2, col3 = st.columns(3)
 col1.metric("Strategy Return", f"{cumulative_strategy_return.iloc[-1]*100:.2f}%")
 col2.metric("Buy & Hold Return", f"{cumulative_stock_return.iloc[-1]*100:.2f}%")
 col3.metric("Trades Executed", f"{int(num_trades)}")
-
 ax.legend()
 st.pyplot(fig)
-st.pyplot(fig)
+
+# Plot RSI
+fig2, ax2 = plt.subplots(figsize=(12, 3))
+ax2.plot(data["RSI"], label="RSI", color="purple")
+ax2.axhline(70, color="red", linestyle="--", alpha=0.5)
+ax2.axhline(30, color="green", linestyle="--", alpha=0.5)
+ax2.set_title("RSI (14)")
+ax2.legend()
+st.pyplot(fig2)
+
 
 st.subheader("Performance Metrics")
 
