@@ -67,8 +67,6 @@ Indicator overlays using the ta technical analysis library
 Building real-world fintech dashboards from scratch
 
 🤝 Connect
-Made with ❤️ by Udit Pandey
-[Connect on LinkedIn](https://www.linkedin.com/in/uditpandeyy)
-🐛 Found an issue or have an idea? Raise it here
-
+Made with ❤️ by Udit Pandey  
+[Connect on LinkedIn](https://www.linkedin.com/in/uditpandeyy) ・ [Raise an Issue](https://github.com/uditpandeyy/Fintech-proj/issues)
 
