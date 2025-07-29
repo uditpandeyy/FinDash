@@ -1,21 +1,5 @@
 # FinDash 📉 | 
 
-## 🧪 QuantConnect Backtesting Strategy
-
-To validate the logic of the Streamlit simulation, a parallel backtest was built using **QuantConnect's Lean engine**.
-
-### 💡 Strategy Logic
-- **Buy** when short-term MA crosses above long-term MA  
-- **Sell** when short-term MA crosses below long-term MA  
-- Evaluated on historical data using QuantConnect’s simulation engine
-
-### 📸 QuantConnect Backtest Screenshots
-
-| Rolling Stats | Drawdown & Capacity | Strategy Equity |
-|---------------|---------------------|------------------|
-| ![](quant_backtest/Pictures/Rolling%20Statistics.png) | ![](quant_backtest/Pictures/Drawdown%20and%20Capacity.png) | ![](quant_backtest/Pictures/Strategy%20Equity.png) |
-
-
 Stock Strategy Analysis & Backtesting Dashboard
 
 > A lightweight, interactive trading strategy dashboard powered by Python 🐍, Streamlit 🚀, and TA-Lib 📊. Visualize moving averages, RSI, MACD, Bollinger Bands, and more — all in one sleek UI.
@@ -40,6 +24,20 @@ It enables users to:
 - Download trade logs directly from the dashboard
 
 ---
+## 🧪 QuantConnect Backtesting Strategy
+
+To validate the logic of the Streamlit simulation, a parallel backtest was built using **QuantConnect's Lean engine**.
+
+### 💡 Strategy Logic
+- **Buy** when short-term MA crosses above long-term MA  
+- **Sell** when short-term MA crosses below long-term MA  
+- Evaluated on historical data using QuantConnect’s simulation engine
+
+### 📸 QuantConnect Backtest Screenshots
+
+| Rolling Stats | Drawdown & Capacity | Strategy Equity |
+|---------------|---------------------|------------------|
+| ![](quant_backtest/Pictures/Rolling%20Statistics.png) | ![](quant_backtest/Pictures/Drawdown%20and%20Capacity.png) | ![](quant_backtest/Pictures/Strategy%20Equity.png) |
 
 
 
