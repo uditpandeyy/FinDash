@@ -1,14 +1,30 @@
-# FinDash 📉 – A Fintech Strategy Dashboard
+# FinDash 📉 | Stock Strategy Analysis & Backtesting Dashboard
 
-Welcome to **FinDash** — a powerful yet lightweight strategy backtesting and visualization tool for stock market traders and fintech enthusiasts.
+> A lightweight, interactive trading strategy dashboard powered by Python 🐍, Streamlit 🚀, and TA-Lib 📊. Visualize moving averages, RSI, MACD, Bollinger Bands, and more — all in one sleek UI.
 
-This dashboard lets you simulate a **Moving Average Crossover Strategy**, enhanced with:
-- 📊 Dynamic RSI & MACD overlays
-- 🔍 Trade logs
-- 📈 Cumulative performance comparisons
-- ⚙️ Adjustable parameters (stock symbol, date range, SMA periods)
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-1.47.1-FF4B4B?logo=streamlit&logoColor=white)
+![yFinance](https://img.shields.io/badge/yFinance-live%20data-green)
+![TA-Lib](https://img.shields.io/badge/Technical%20Indicators-TA%20Lib-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-brightgreen)
 
 ---
+
+## 🚀 Overview
+
+**FinDash** is a fintech-focused web dashboard designed to test and visualize stock trading strategies based on technical indicators.
+
+It enables users to:
+
+- Analyze stock data using custom date ranges & MA periods  
+- View crossover signals (Buy/Sell) with clear chart markers  
+- Explore performance metrics like Sharpe Ratio & Max Drawdown  
+- Visualize RSI, MACD, and Bollinger Bands interactively  
+- Download trade logs directly from the dashboard
+
+---
+
+
 
 ## 🔧 Features Overview
 
